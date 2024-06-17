@@ -93,13 +93,13 @@
 					<textarea class="form-control" id="WidgetCategory" name="WidgetCategory" rows="3" placeholder='["分类A","分类B"]'></textarea>
 				</div>
 	
-				<div class="form-group">
+<!-- 				<div class="form-group">
 					<label for="name">菜单, 例:<code>[{"title":"技术文章","url":"/category/技术文章"},{"title":"管理","url":"/admin"}]</code></label>
 					<textarea class="form-control" id="WidgetMenu" name="WidgetMenu" rows="5"  placeholder='[
 	{"title":"菜单A"	,"url":"/category/菜单A"},
 	{"title":"菜单B"	,"url":"/category/菜单B"}
 ]'></textarea>
-				</div>
+				</div> -->
 				<div class="form-group">
 					<label for="name">其他链接, 例:<code>[{"title":"我的好友","url":"https://blog.gezhong.vip/"},{"title":"谷歌","url":"https://www.google.com/"}]</code></label>
 					<textarea class="form-control" id="WidgetLink" name="WidgetLink" rows="5"  placeholder='[
@@ -143,7 +143,7 @@
 <script type="text/javascript">
 	$(function(){
 		var categoryJson = <!--{categoryJson}-->;
-		var menuJson = <!--{menuJson}-->;
+		// var menuJson = <!--{menuJson}-->;
 		var linkJson = <!--{linkJson}-->;
 		var mdEditor = editormd("content", {
 				height : 640,
@@ -159,7 +159,7 @@
 		$('#createDate').val(new Date());
 		
 		$('#WidgetCategory').val(JSON.stringify(categoryJson));
-		$('#WidgetMenu').val(JSON.stringify(menuJson));
+		// $('#WidgetMenu').val(JSON.stringify(menuJson));
 		$('#WidgetLink').val(JSON.stringify(linkJson));
 		var category = $('#category');
 		category.empty();
@@ -195,7 +195,8 @@
     })
     //新建文章
     function saveAddNew(){
-        if(!$('#WidgetMenu').val() || !$('#title').val() || !$('#createDate').val() || !$('#category').val()){
+        if(//!$('#WidgetMenu').val() || 
+        	!$('#title').val() || !$('#createDate').val() || !$('#category').val()){
            alert("信息不全");
            return;
         }
@@ -227,11 +228,11 @@
             alert("分类格式错误"); 
             return false;
         }
-        if(!isJSON($('#WidgetMenu').val()))
-        {
-            alert("菜单格式错误"); 
-            return false;
-        }
+        // if(!isJSON($('#WidgetMenu').val()))
+        // {
+        //     alert("菜单格式错误"); 
+        //     return false;
+        // }
         $.ajax({
             type: "POST",
             dataType: "json",

@@ -16,9 +16,9 @@
 			<div class="container">
 				<div class="logo"><div><a href="/" rel="home"><img src="{{&OPT.logo}}" alt="{{&OPT.siteName}}"></a></div></div>
 				<nav>
-					{{#widgetMenuList}}
-					<a href="{{&url}}" href="{{&title}}">{{&title}}</a>
-					{{/widgetMenuList}}
+					{{#categories}}
+					<a href="/category/{{&.}}" title="{{&.}}">{{&.}}</a>
+					{{/categories}}
 				</nav>
 			</div>
 		</header>
@@ -93,14 +93,14 @@
 							{{/widgetRecentlyList}}									
 						</ul>
 					</div>
-					<div class="widget">
+<!-- 					<div class="widget">
 						<h3 class="widget-title"><span>分类目录</span></h3>
 						<ul>
 							{{#widgetCategoryList}}
 							<li><a href="/category/{{&.}}">{{&.}}</a></li>
 							{{/widgetCategoryList}}
 						</ul>
-					</div>
+					</div> -->
 					<div class="widget">
 						<h3 class="widget-title"><span>标签</span></h3>
 						<div class="tagcloud">

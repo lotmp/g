@@ -82,7 +82,7 @@
 					<div class="widget">
 						<h3 class="widget-title"><span>近期文章</span></h3>
 						<ul class="post_thumb">
-							{{#widgetRecentlyList}}
+							{{#newest}}
 							<li class="item">
 								<div class="item-img"><a href="{{&url}}" title="{{&title}}"><img width="480" height="264" src="{{&img}}" alt="{{&title}}" /></a></div>
 								<div class="item-content">
@@ -90,24 +90,24 @@
 									<p class="item-date">{{&createDate10}}</p>
 								</div>
 							</li>
-							{{/widgetRecentlyList}}									
+							{{/newest}}									
 						</ul>
 					</div>
 					<div class="widget">
 						<h3 class="widget-title"><span>标签</span></h3>
 						<div class="tagcloud">
-							{{#widgetTagsList}}
+							{{#tags}}
 							<a href="/tags/{{&.}}">{{&.}}</a>
-							{{/widgetTagsList}}
+							{{/tags}}
 						</div>
 					</div>
 
 					<div class="widget">
 						<h3 class="widget-title"><span>链接</span></h3>
 						<ul>
-							{{#widgetLinkList}}
+							{{#links}}
 							<li><a href="{{&url}}" target="_blank">{{&title}}</a></li>
-							{{/widgetLinkList}}
+							{{/links}}
 						</ul>
 					</div>
 				</aside>
